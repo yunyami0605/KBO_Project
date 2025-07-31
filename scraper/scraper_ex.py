@@ -4,6 +4,34 @@ from bs4 import BeautifulSoup
 from libs.requests import get_request_header
 import json
 
+def get_weahter():
+    params = {
+        "q": "37.5665,126.9780",
+        "lon": 126.9780,
+        "key": "4706749edceb4016a8220808253107".strip(),
+        "units": "metric",
+        "lang": "k"
+    }
+
+    res = requests.get("https://api.weatherapi.com/v1/current.json", params=params);
+
+    if res.ok:
+        data = res.json()
+        temperature = data["current"]["temp_c"]          # 온도 (℃)
+        wind_speed = data["current"]["wind_kph"]         # 바람 속도 (km/h)
+        humidity = data["current"]["humidity"]           # 습도 (%)
+
+        # 출력
+        print(f"🌡️ 온도: {temperature}°C")
+        print(f"💨 바람: {wind_speed} km/h")
+        print(f"💧 습도: {humidity}%")
+
+
+# weatherapi, api : https://api.weatherapi.com/v1/current.json
+##
+
+        
+
 def get_hitter():
     header= get_request_header()
     res = requests.get("https://www.welcometopranking.com/baseball/?p=chart&searchType=DAILY&searchDate=2025-07-20&position=T&team=2002&page=1&orderBy=&orderSort=", headers=header);
@@ -52,5 +80,6 @@ def get_hitter():
             print("hitters.json 저장 완료")
 
 
-get_hitter()
+# get_hitter()
 
+get_weahter()
