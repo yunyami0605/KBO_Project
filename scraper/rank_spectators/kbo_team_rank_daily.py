@@ -36,7 +36,7 @@ df = pd.DataFrame(data, columns=columns)
 
 driver.quit()
 
-output_dir = "../data"
+output_dir = "../../data/rank_spectators"
 os.makedirs(output_dir, exist_ok=True)
 output_file = os.path.join(output_dir, "kbo_team_rank_daily.json")
 

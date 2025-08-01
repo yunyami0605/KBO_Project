@@ -7,7 +7,7 @@ import json
 import os
 
 
-save_dir = '../data'
+save_dir = '../../data/rank_spectators'
 os.makedirs(save_dir, exist_ok=True)
 
 # 크롤링 대상 URL, 파일명 리스트
