@@ -1,4 +1,4 @@
-from apis import KakaoMapLocalSearcherApi
+from apis.kakao_map_search_api import KakaoMapLocalSearcherApi
 from libs.json import load_from_json, save_to_json
         
 if __name__ == "__main__":
