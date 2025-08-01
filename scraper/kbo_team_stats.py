@@ -6,6 +6,7 @@ import time
 import json
 import os
 
+
 save_dir = '../data'
 os.makedirs(save_dir, exist_ok=True)
 
@@ -20,17 +21,18 @@ targets = [
         'filename': 'kbo_team_pitcher_basic.json',
     },
     {
-        'url': 'https://www.koreabaseball.com/Record/Team/Defense/Basic1.aspx',
+        'url': 'https://www.koreabaseball.com/Record/Team/Defense/Basic.aspx',
         'filename': 'kbo_team_defense_basic.json',
     },
     {
-        'url': 'https://www.koreabaseball.com/Record/Team/Runner/Basic1.aspx',
+        'url': 'https://www.koreabaseball.com/Record/Team/Runner/Basic.aspx',
         'filename': 'kbo_team_runner_basic.json',
     }
 ]
 
 service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service)
+
 
 try:
     for target in targets:
