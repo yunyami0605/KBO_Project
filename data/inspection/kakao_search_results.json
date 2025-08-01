@@ -1,0 +1,292 @@
+{
+  "LG 트윈스": [
+    {
+      "place_name": "해주냉면",
+      "address_name": "서울 송파구 잠실동 195-9",
+      "category_name": "음식점 > 한식 > 냉면",
+      "phone": "02-424-7192",
+      "place_url": "http://place.map.kakao.com/25049102",
+      "x": "127.07977463491474",
+      "y": "37.509652351093166"
+    },
+    {
+      "place_name": "잭슨피자 잠실본점",
+      "address_name": "서울 송파구 잠실동 175-4",
+      "category_name": "음식점 > 양식 > 피자",
+      "phone": "02-3432-0717",
+      "place_url": "http://place.map.kakao.com/1845251816",
+      "x": "127.078820703713",
+      "y": "37.5113630976398"
+    },
+    {
+      "place_name": "청기와타운 잠실새내점",
+      "address_name": "서울 송파구 잠실동 177-5",
+      "category_name": "음식점 > 한식 > 육류,고기 > 갈비",
+      "phone": "0507-1429-8101",
+      "place_url": "http://place.map.kakao.com/1617078296",
+      "x": "127.079977112788",
+      "y": "37.5107325183692"
+    }
+  ],
+  "두산 베어스": [
+    {
+      "place_name": "해주냉면",
+      "address_name": "서울 송파구 잠실동 195-9",
+      "category_name": "음식점 > 한식 > 냉면",
+      "phone": "02-424-7192",
+      "place_url": "http://place.map.kakao.com/25049102",
+      "x": "127.07977463491474",
+      "y": "37.509652351093166"
+    },
+    {
+      "place_name": "잭슨피자 잠실본점",
+      "address_name": "서울 송파구 잠실동 175-4",
+      "category_name": "음식점 > 양식 > 피자",
+      "phone": "02-3432-0717",
+      "place_url": "http://place.map.kakao.com/1845251816",
+      "x": "127.078820703713",
+      "y": "37.5113630976398"
+    },
+    {
+      "place_name": "청기와타운 잠실새내점",
+      "address_name": "서울 송파구 잠실동 177-5",
+      "category_name": "음식점 > 한식 > 육류,고기 > 갈비",
+      "phone": "0507-1429-8101",
+      "place_url": "http://place.map.kakao.com/1617078296",
+      "x": "127.079977112788",
+      "y": "37.5107325183692"
+    }
+  ],
+  "키움 히어로즈": [
+    {
+      "place_name": "소담촌 고척점",
+      "address_name": "서울 구로구 고척동 76-160",
+      "category_name": "음식점 > 샤브샤브",
+      "phone": "02-2625-8388",
+      "place_url": "http://place.map.kakao.com/26916018",
+      "x": "126.863821635317",
+      "y": "37.497729151381"
+    },
+    {
+      "place_name": "닥터로빈 고척점",
+      "address_name": "서울 구로구 고척동 66-12",
+      "category_name": "음식점 > 양식",
+      "phone": "070-7705-9742",
+      "place_url": "http://place.map.kakao.com/950014417",
+      "x": "126.8657478744761",
+      "y": "37.49562029908444"
+    },
+    {
+      "place_name": "샤브향 구로점",
+      "address_name": "서울 구로구 고척동 76-27",
+      "category_name": "음식점 > 아시아음식 > 동남아음식 > 샤브향",
+      "phone": "02-2686-1011",
+      "place_url": "http://place.map.kakao.com/27060052",
+      "x": "126.864103986234",
+      "y": "37.4991782936839"
+    }
+  ],
+  "KT 위즈": [
+    {
+      "place_name": "약산골흑염소탕",
+      "address_name": "경기 수원시 장안구 송죽동 504-3",
+      "category_name": "음식점 > 한식 > 사철탕,영양탕",
+      "phone": "031-242-2030",
+      "place_url": "http://place.map.kakao.com/1846470479",
+      "x": "127.00755686985605",
+      "y": "37.29974483204239"
+    },
+    {
+      "place_name": "디아즈 북수원점",
+      "address_name": "경기 수원시 장안구 조원동 752-14",
+      "category_name": "음식점 > 카페",
+      "phone": "031-255-0712",
+      "place_url": "http://place.map.kakao.com/1039808824",
+      "x": "127.01044447043876",
+      "y": "37.301188073084205"
+    },
+    {
+      "place_name": "대해양꼬치무한리필",
+      "address_name": "경기 수원시 장안구 조원동 752-17",
+      "category_name": "음식점 > 중식",
+      "phone": "031-207-5666",
+      "place_url": "http://place.map.kakao.com/788740787",
+      "x": "127.00982867802118",
+      "y": "37.30155574871294"
+    }
+  ],
+  "SSG 랜더스": [
+    {
+      "place_name": "빅브라더돈까스",
+      "address_name": "인천 연수구 선학동 100-5",
+      "category_name": "음식점 > 양식",
+      "phone": "032-423-3113",
+      "place_url": "http://place.map.kakao.com/1632647776",
+      "x": "126.699271911252",
+      "y": "37.4357923190249"
+    },
+    {
+      "place_name": "고구려짬뽕10101 선학점",
+      "address_name": "인천 연수구 선학동 101-3",
+      "category_name": "음식점 > 중식 > 중국요리",
+      "phone": "032-433-1011",
+      "place_url": "http://place.map.kakao.com/27539197",
+      "x": "126.69884676048332",
+      "y": "37.43558490469553"
+    },
+    {
+      "place_name": "레오커피",
+      "address_name": "인천 연수구 선학동 99",
+      "category_name": "음식점 > 카페 > 커피전문점",
+      "phone": "032-422-7484",
+      "place_url": "http://place.map.kakao.com/1844978649",
+      "x": "126.700414881313",
+      "y": "37.4359213632017"
+    }
+  ],
+  "한화 이글스": [
+    {
+      "place_name": "복수분식 본점",
+      "address_name": "대전 중구 대사동 77-45",
+      "category_name": "음식점 > 분식",
+      "phone": "042-223-6518",
+      "place_url": "http://place.map.kakao.com/1695398520",
+      "x": "127.4275363182868",
+      "y": "36.31800819488081"
+    },
+    {
+      "place_name": "여수게장백반 본점",
+      "address_name": "대전 중구 대사동 95-13",
+      "category_name": "음식점 > 한식 > 해물,생선 > 게,대게",
+      "phone": "042-255-8090",
+      "place_url": "http://place.map.kakao.com/9250960",
+      "x": "127.42692771394837",
+      "y": "36.31728672387535"
+    },
+    {
+      "place_name": "신토불이추어탕 민물장어전문점",
+      "address_name": "대전 중구 대사동 75-19",
+      "category_name": "음식점 > 한식 > 해물,생선 > 장어",
+      "phone": "042-252-3555",
+      "place_url": "http://place.map.kakao.com/10610743",
+      "x": "127.427236931884",
+      "y": "36.3174262029413"
+    }
+  ],
+  "KIA 타이거즈": [
+    {
+      "place_name": "인크커피 광주기아챔피언스필드점",
+      "address_name": "광주 북구 임동 316",
+      "category_name": "음식점 > 카페 > 커피전문점",
+      "phone": "0507-1363-5941",
+      "place_url": "http://place.map.kakao.com/266604145",
+      "x": "126.88899259051618",
+      "y": "35.16727170040502"
+    },
+    {
+      "place_name": "청와대",
+      "address_name": "광주 북구 임동 100-51",
+      "category_name": "음식점 > 중식 > 중국요리",
+      "phone": "062-528-8282",
+      "place_url": "http://place.map.kakao.com/9450569",
+      "x": "126.891101568241",
+      "y": "35.16618297132594"
+    },
+    {
+      "place_name": "갤러리24카페",
+      "address_name": "광주 서구 광천동 608-1",
+      "category_name": "음식점 > 카페",
+      "phone": "",
+      "place_url": "http://place.map.kakao.com/972091142",
+      "x": "126.88478304663721",
+      "y": "35.166479081731175"
+    }
+  ],
+  "삼성 라이온즈": [
+    {
+      "place_name": "시후",
+      "address_name": "대구 수성구 대흥동 829",
+      "category_name": "음식점 > 중식 > 중국요리",
+      "phone": "053-243-0001",
+      "place_url": "http://place.map.kakao.com/1404573444",
+      "x": "128.683221284698",
+      "y": "35.8387668323763"
+    },
+    {
+      "place_name": "란타이",
+      "address_name": "대구 수성구 대흥동 831",
+      "category_name": "음식점 > 아시아음식 > 동남아음식 > 태국음식",
+      "phone": "",
+      "place_url": "http://place.map.kakao.com/1336613249",
+      "x": "128.682596875072",
+      "y": "35.8380222300344"
+    },
+    {
+      "place_name": "참한차림한식뷔페",
+      "address_name": "대구 수성구 대흥동 831-4",
+      "category_name": "음식점 > 뷔페 > 한식뷔페",
+      "phone": "053-791-1119",
+      "place_url": "http://place.map.kakao.com/1351609999",
+      "x": "128.682504215836",
+      "y": "35.837879346074"
+    }
+  ],
+  "NC 다이노스": [
+    {
+      "place_name": "쿠우쿠우 마산점",
+      "address_name": "경남 창원시 마산회원구 양덕동 149-31",
+      "category_name": "음식점 > 뷔페 > 해산물뷔페 > 쿠우쿠우",
+      "phone": "055-298-6274",
+      "place_url": "http://place.map.kakao.com/242461651",
+      "x": "128.586088581021",
+      "y": "35.2235836103838"
+    },
+    {
+      "place_name": "오얏리",
+      "address_name": "경남 창원시 마산합포구 산호동 26-50",
+      "category_name": "음식점 > 술집 > 일본식주점",
+      "phone": "070-4354-0589",
+      "place_url": "http://place.map.kakao.com/523621082",
+      "x": "128.583522812617",
+      "y": "35.2197310858144"
+    },
+    {
+      "place_name": "전재경스시",
+      "address_name": "경남 창원시 마산합포구 산호동 31-13",
+      "category_name": "음식점 > 일식 > 초밥,롤",
+      "phone": "055-248-8700",
+      "place_url": "http://place.map.kakao.com/154526588",
+      "x": "128.58227815099556",
+      "y": "35.22027819085496"
+    }
+  ],
+  "롯데 자이언츠": [
+    {
+      "place_name": "주문진막국수",
+      "address_name": "부산 동래구 사직동 92-1",
+      "category_name": "음식점 > 한식 > 국수",
+      "phone": "051-501-7856",
+      "place_url": "http://place.map.kakao.com/17959212",
+      "x": "129.059469249202",
+      "y": "35.1959326989673"
+    },
+    {
+      "place_name": "삼대돼지불고기 2호점손녀집",
+      "address_name": "부산 동래구 사직동 98-7",
+      "category_name": "음식점 > 한식 > 육류,고기 > 불고기,두루치기",
+      "phone": "051-505-0049",
+      "place_url": "http://place.map.kakao.com/27380134",
+      "x": "129.064538126442",
+      "y": "35.19615995516"
+    },
+    {
+      "place_name": "금강만두 직영점",
+      "address_name": "부산 동래구 사직동 92-4",
+      "category_name": "음식점 > 분식",
+      "phone": "051-502-8784",
+      "place_url": "http://place.map.kakao.com/1350070025",
+      "x": "129.060245784069",
+      "y": "35.1960780884486"
+    }
+  ]
+}
