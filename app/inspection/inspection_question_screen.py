@@ -16,7 +16,7 @@ result = {
     "defense": 0,
     "runner": 0,
     "hitter": 0,
-    "picher": 0,
+    "pitcher": 0,
 }
 
 

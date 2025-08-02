@@ -49,7 +49,7 @@ questions = [
 
             {
                 "text": "다양한 투수들이 고르게 잘 던져주는 팀",
-                "value": [ "picher" ]
+                "value": [ "pitcher" ]
             },
         ]
     },
