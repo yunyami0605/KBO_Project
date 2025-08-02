@@ -4,7 +4,9 @@ First Mini Project of Python Data Analysis
 
 ### 2. 실행 명령어 정리
 
-1. streamlit run app/main.py : streamlit 개발 환경 실행
+# PYTHONPATH=. streamlit run app/main.py
+
+1. streamlit run main.py : streamlit 개발 환경 실행
 2. python -m scraper.scraper_ex : 루트 기준으로 해당 스크립트 실행
 
 ---
