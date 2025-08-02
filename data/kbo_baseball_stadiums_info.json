@@ -1,7 +1,7 @@
 {
   "teams": [
     {
-      "team": "LG 트윈스",
+      "team": "LG",
       "stadium": "잠실야구장",
       "city": "서울",
       "latitude": 37.5146,
@@ -9,7 +9,7 @@
       "capacity": 25553
     },
     {
-      "team": "두산 베어스",
+      "team": "두산",
       "stadium": "잠실야구장",
       "city": "서울",
       "latitude": 37.5146,
@@ -17,7 +17,7 @@
       "capacity": 25553
     },
     {
-      "team": "키움 히어로즈",
+      "team": "키움",
       "stadium": "고척 스카이돔",
       "city": "서울",
       "latitude": 37.4981,
@@ -25,7 +25,7 @@
       "capacity": 16744
     },
     {
-      "team": "KT 위즈",
+      "team": "KT",
       "stadium": "수원 케이티 위즈파크",
       "city": "수원",
       "latitude": 37.2994,
@@ -33,7 +33,7 @@
       "capacity": 20000
     },
     {
-      "team": "SSG 랜더스",
+      "team": "SSG",
       "stadium": "인천 SSG 랜더스필드",
       "city": "인천",
       "latitude": 37.4367,
@@ -41,7 +41,7 @@
       "capacity": 23000
     },
     {
-      "team": "한화 이글스",
+      "team": "한화",
       "stadium": "대전 한화생명이글스파크",
       "city": "대전",
       "latitude": 36.3166,
@@ -49,7 +49,7 @@
       "capacity": 13000
     },
     {
-      "team": "KIA 타이거즈",
+      "team": "KIA",
       "stadium": "광주 KIA 챔피언스필드",
       "city": "광주",
       "latitude": 35.1684,
@@ -57,7 +57,7 @@
       "capacity": 22000
     },
     {
-      "team": "삼성 라이온즈",
+      "team": "삼성",
       "stadium": "대구 삼성라이온즈파크",
       "city": "대구",
       "latitude": 35.8419,
@@ -65,7 +65,7 @@
       "capacity": 24000
     },
     {
-      "team": "NC 다이노스",
+      "team": "NC",
       "stadium": "창원 NC파크",
       "city": "창원",
       "latitude": 35.2197,
@@ -73,7 +73,7 @@
       "capacity": 22000
     },
     {
-      "team": "롯데 자이언츠",
+      "team": "롯데",
       "stadium": "부산 사직야구장",
       "city": "부산",
       "latitude": 35.194,
