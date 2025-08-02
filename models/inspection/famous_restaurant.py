@@ -15,7 +15,6 @@ def process_recommend_famous_restaurant():
             }
     """
     data = load_from_json("./data/inspection/kakao_search_results.json");
-    print(data)
 
     team_keys = {
         "LG 트윈스": "LG",
@@ -38,7 +37,8 @@ def process_recommend_famous_restaurant():
             {
                 "place_name": restraunt["place_name"],
                 "category_name": restraunt["category_name"],
-                "address_name": restraunt["address_name"]
+                "address_name": restraunt["address_name"],
+                "url": restraunt["place_url"]
             }
             for restraunt in restraunts
         ]
