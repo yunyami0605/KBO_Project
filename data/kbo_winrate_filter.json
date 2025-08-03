@@ -1,0 +1,252 @@
+[
+  {
+    "year": 2020,
+    "team": "NC",
+    "win_rate": 0.601
+  },
+  {
+    "year": 2020,
+    "team": "KT",
+    "win_rate": 0.566
+  },
+  {
+    "year": 2020,
+    "team": "두산",
+    "win_rate": 0.564
+  },
+  {
+    "year": 2020,
+    "team": "LG",
+    "win_rate": 0.564
+  },
+  {
+    "year": 2020,
+    "team": "키움",
+    "win_rate": 0.559
+  },
+  {
+    "year": 2020,
+    "team": "KIA",
+    "win_rate": 0.507
+  },
+  {
+    "year": 2020,
+    "team": "롯데",
+    "win_rate": 0.497
+  },
+  {
+    "year": 2020,
+    "team": "삼성",
+    "win_rate": 0.46
+  },
+  {
+    "year": 2020,
+    "team": "SK",
+    "win_rate": 0.357
+  },
+  {
+    "year": 2020,
+    "team": "한화",
+    "win_rate": 0.326
+  },
+  {
+    "year": 2021,
+    "team": "KT",
+    "win_rate": 0.563
+  },
+  {
+    "year": 2021,
+    "team": "삼성",
+    "win_rate": 0.563
+  },
+  {
+    "year": 2021,
+    "team": "LG",
+    "win_rate": 0.554
+  },
+  {
+    "year": 2021,
+    "team": "두산",
+    "win_rate": 0.522
+  },
+  {
+    "year": 2021,
+    "team": "키움",
+    "win_rate": 0.511
+  },
+  {
+    "year": 2021,
+    "team": "SSG",
+    "win_rate": 0.508
+  },
+  {
+    "year": 2021,
+    "team": "NC",
+    "win_rate": 0.496
+  },
+  {
+    "year": 2021,
+    "team": "롯데",
+    "win_rate": 0.478
+  },
+  {
+    "year": 2021,
+    "team": "KIA",
+    "win_rate": 0.433
+  },
+  {
+    "year": 2021,
+    "team": "한화",
+    "win_rate": 0.371
+  },
+  {
+    "year": 2022,
+    "team": "SSG",
+    "win_rate": 0.629
+  },
+  {
+    "year": 2022,
+    "team": "LG",
+    "win_rate": 0.613
+  },
+  {
+    "year": 2022,
+    "team": "키움",
+    "win_rate": 0.563
+  },
+  {
+    "year": 2022,
+    "team": "KT",
+    "win_rate": 0.563
+  },
+  {
+    "year": 2022,
+    "team": "KIA",
+    "win_rate": 0.49
+  },
+  {
+    "year": 2022,
+    "team": "NC",
+    "win_rate": 0.475
+  },
+  {
+    "year": 2022,
+    "team": "삼성",
+    "win_rate": 0.465
+  },
+  {
+    "year": 2022,
+    "team": "롯데",
+    "win_rate": 0.457
+  },
+  {
+    "year": 2022,
+    "team": "두산",
+    "win_rate": 0.423
+  },
+  {
+    "year": 2022,
+    "team": "한화",
+    "win_rate": 0.324
+  },
+  {
+    "year": 2023,
+    "team": "LG",
+    "win_rate": 0.606
+  },
+  {
+    "year": 2023,
+    "team": "KT",
+    "win_rate": 0.56
+  },
+  {
+    "year": 2023,
+    "team": "SSG",
+    "win_rate": 0.539
+  },
+  {
+    "year": 2023,
+    "team": "NC",
+    "win_rate": 0.528
+  },
+  {
+    "year": 2023,
+    "team": "두산",
+    "win_rate": 0.521
+  },
+  {
+    "year": 2023,
+    "team": "KIA",
+    "win_rate": 0.514
+  },
+  {
+    "year": 2023,
+    "team": "롯데",
+    "win_rate": 0.472
+  },
+  {
+    "year": 2023,
+    "team": "삼성",
+    "win_rate": 0.427
+  },
+  {
+    "year": 2023,
+    "team": "한화",
+    "win_rate": 0.42
+  },
+  {
+    "year": 2023,
+    "team": "키움",
+    "win_rate": 0.411
+  },
+  {
+    "year": 2024,
+    "team": "KIA",
+    "win_rate": 0.613
+  },
+  {
+    "year": 2024,
+    "team": "삼성",
+    "win_rate": 0.549
+  },
+  {
+    "year": 2024,
+    "team": "LG",
+    "win_rate": 0.535
+  },
+  {
+    "year": 2024,
+    "team": "두산",
+    "win_rate": 0.521
+  },
+  {
+    "year": 2024,
+    "team": "KT",
+    "win_rate": 0.507
+  },
+  {
+    "year": 2024,
+    "team": "SSG",
+    "win_rate": 0.507
+  },
+  {
+    "year": 2024,
+    "team": "롯데",
+    "win_rate": 0.471
+  },
+  {
+    "year": 2024,
+    "team": "한화",
+    "win_rate": 0.465
+  },
+  {
+    "year": 2024,
+    "team": "NC",
+    "win_rate": 0.43
+  },
+  {
+    "year": 2024,
+    "team": "키움",
+    "win_rate": 0.403
+  }
+]
