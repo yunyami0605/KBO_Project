@@ -6,3 +6,4 @@ pydeck
 plotly
 matplotlib
 seaborn
+scipy
