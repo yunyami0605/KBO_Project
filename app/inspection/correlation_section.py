@@ -23,7 +23,7 @@ def render_correlation_section():
         index=2,  # 기본값: 5년
         format_func=lambda x: f"최근 {x}년"
     )
-    
+
     # 분석 실행
     with st.spinner(f"최근 {selected_years}년 데이터 분석 중..."):
         result = analyzer.analyze_correlation_by_years(selected_years)

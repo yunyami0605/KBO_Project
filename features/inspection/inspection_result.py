@@ -122,13 +122,15 @@ class InspectionResult:
 
         home_teams = [item["홈팀"] for item in schedule_data]
 
+        pprint(stadium_data)
         pprint(home_teams)
         pprint("### end ###")
 
         return {
             item["team"]: {
                 "latitude": item["latitude"],
-                "longitude": item["longitude"]
+                "longitude": item["longitude"],
+                "stadium": item["stadium"]
             }
             for item in stadium_data if item["team"] in home_teams
         }
@@ -139,12 +141,20 @@ class InspectionResult:
         각 stadium 위도/경도 정보 가져오기 -> 금일 홈 경기에 대한 정보 가져오기 -> 4개 홈 구장 날씨 가져오기
 
         Returns:
-            str[]
+            "name": str,
+            "location": {
+                "latitude": str,
+                "longitude": str,
+            }[]
+
         '''
-        stadiums = self.get_today_home_team_data()
+        stadiums_info = self.get_today_home_team_data()
         matched = []
 
-        for team, loc in stadiums.items():
+        print("@@@ team")
+        print(stadiums_info)
+
+        for team, loc in stadiums_info.items():
             weather = self.weather_api.get_current_weather(f"{loc['latitude']},{loc['longitude']}")
             tags = []
 
@@ -161,9 +171,17 @@ class InspectionResult:
                 tags.append("error")
 
             if selected_weather in tags:
-                matched.append(team)
+                matched.append({
+                    "name": team,
+                    "latitude": loc["latitude"], "longitude": loc["longitude"],
+                    "stadium": loc["stadium"]
+                    })
+    
+        # 날씨와 matched가 있으면 해당 구장 정보 반환, 없으면 전체 구장 정보 목록 반환
+        return matched if matched else [
+            {"name": team, "latitude": _data["latitude"], "longitude": _data["longitude"], "stadium": _data["stadium"]} for team, _data in stadiums_info.items()
+        ]
 
-        return matched if matched else list(stadiums.keys())
     
     # 구장 추천
     def get_recommend_stadium(self, result_arr):
@@ -175,19 +193,29 @@ class InspectionResult:
         candidates = self.get_recommend_weather_stadiums(weather)
         team_rank = get_team_stats_rank(stat)
 
+        pprint("@@@ candidates_SELECTED ")
+        pprint(candidates)
+
+        # 맛집 추천
         famous_rests = process_recommend_famous_restaurant()
 
-        selected_team = ""
+        selected_team = None
 
         for team in team_rank:
-            if team in candidates:
-                selected_team = team
+            for item in candidates:
+                if item["name"] == team:
+                    selected_team = item  # 전체 dict 저장
+                    break
+            if selected_team:
                 break
+
+        pprint("@@@ selected_team_SELECTED ")
+        pprint(selected_team)
 
         '''
         Return:
         {
-            "team": '롯데',
+            "team": {'latitdue', 'longitude', 'name', 'stadium}
             "famous_restaurants": [
                 {
                     'address_name': string,
@@ -197,10 +225,12 @@ class InspectionResult:
             ]
         }
         '''
+
+        
             
         return {
             "team" : selected_team,
-            "famous_restaurants": famous_rests[selected_team]
+            "famous_restaurants": famous_rests[selected_team["name"]]
         }
 
     def get_personality_result(self, result_arr):
