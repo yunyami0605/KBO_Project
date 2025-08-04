@@ -1,0 +1,352 @@
+[
+  {
+    "year": 2020,
+    "team": "NC",
+    "win_rate": 0.601,
+    "total_spectators": 45992,
+    "avg_spectators": 639
+  },
+  {
+    "year": 2020,
+    "team": "KT",
+    "win_rate": 0.566,
+    "total_spectators": 22499,
+    "avg_spectators": 312
+  },
+  {
+    "year": 2020,
+    "team": "두산",
+    "win_rate": 0.564,
+    "total_spectators": 55047,
+    "avg_spectators": 765
+  },
+  {
+    "year": 2020,
+    "team": "LG",
+    "win_rate": 0.564,
+    "total_spectators": 41317,
+    "avg_spectators": 574
+  },
+  {
+    "year": 2020,
+    "team": "키움",
+    "win_rate": 0.559,
+    "total_spectators": 27158,
+    "avg_spectators": 377
+  },
+  {
+    "year": 2020,
+    "team": "KIA",
+    "win_rate": 0.507,
+    "total_spectators": 21198,
+    "avg_spectators": 294
+  },
+  {
+    "year": 2020,
+    "team": "롯데",
+    "win_rate": 0.497,
+    "total_spectators": 36717,
+    "avg_spectators": 510
+  },
+  {
+    "year": 2020,
+    "team": "삼성",
+    "win_rate": 0.46,
+    "total_spectators": 27819,
+    "avg_spectators": 386
+  },
+  {
+    "year": 2020,
+    "team": "SSG",
+    "win_rate": 0.357,
+    "total_spectators": 30608,
+    "avg_spectators": 425
+  },
+  {
+    "year": 2020,
+    "team": "한화",
+    "win_rate": 0.326,
+    "total_spectators": 19962,
+    "avg_spectators": 277
+  },
+  {
+    "year": 2021,
+    "team": "KT",
+    "win_rate": 0.563,
+    "total_spectators": 74189,
+    "avg_spectators": 1030
+  },
+  {
+    "year": 2021,
+    "team": "삼성",
+    "win_rate": 0.563,
+    "total_spectators": 278222,
+    "avg_spectators": 3864
+  },
+  {
+    "year": 2021,
+    "team": "LG",
+    "win_rate": 0.554,
+    "total_spectators": 116691,
+    "avg_spectators": 1621
+  },
+  {
+    "year": 2021,
+    "team": "두산",
+    "win_rate": 0.522,
+    "total_spectators": 98036,
+    "avg_spectators": 1362
+  },
+  {
+    "year": 2021,
+    "team": "키움",
+    "win_rate": 0.511,
+    "total_spectators": 67407,
+    "avg_spectators": 936
+  },
+  {
+    "year": 2021,
+    "team": "SSG",
+    "win_rate": 0.508,
+    "total_spectators": 118412,
+    "avg_spectators": 1645
+  },
+  {
+    "year": 2021,
+    "team": "NC",
+    "win_rate": 0.496,
+    "total_spectators": 128289,
+    "avg_spectators": 1782
+  },
+  {
+    "year": 2021,
+    "team": "롯데",
+    "win_rate": 0.478,
+    "total_spectators": 138294,
+    "avg_spectators": 1921
+  },
+  {
+    "year": 2021,
+    "team": "KIA",
+    "win_rate": 0.433,
+    "total_spectators": 104989,
+    "avg_spectators": 1458
+  },
+  {
+    "year": 2021,
+    "team": "한화",
+    "win_rate": 0.371,
+    "total_spectators": 103960,
+    "avg_spectators": 1444
+  },
+  {
+    "year": 2022,
+    "team": "SSG",
+    "win_rate": 0.629,
+    "total_spectators": 981546,
+    "avg_spectators": 13633
+  },
+  {
+    "year": 2022,
+    "team": "LG",
+    "win_rate": 0.613,
+    "total_spectators": 930163,
+    "avg_spectators": 12919
+  },
+  {
+    "year": 2022,
+    "team": "키움",
+    "win_rate": 0.563,
+    "total_spectators": 349773,
+    "avg_spectators": 4858
+  },
+  {
+    "year": 2022,
+    "team": "KT",
+    "win_rate": 0.563,
+    "total_spectators": 532268,
+    "avg_spectators": 7393
+  },
+  {
+    "year": 2022,
+    "team": "KIA",
+    "win_rate": 0.49,
+    "total_spectators": 604394,
+    "avg_spectators": 8394
+  },
+  {
+    "year": 2022,
+    "team": "NC",
+    "win_rate": 0.475,
+    "total_spectators": 369018,
+    "avg_spectators": 5125
+  },
+  {
+    "year": 2022,
+    "team": "삼성",
+    "win_rate": 0.465,
+    "total_spectators": 674452,
+    "avg_spectators": 9367
+  },
+  {
+    "year": 2022,
+    "team": "롯데",
+    "win_rate": 0.457,
+    "total_spectators": 631656,
+    "avg_spectators": 8773
+  },
+  {
+    "year": 2022,
+    "team": "두산",
+    "win_rate": 0.423,
+    "total_spectators": 644614,
+    "avg_spectators": 8953
+  },
+  {
+    "year": 2022,
+    "team": "한화",
+    "win_rate": 0.324,
+    "total_spectators": 358190,
+    "avg_spectators": 4975
+  },
+  {
+    "year": 2023,
+    "team": "LG",
+    "win_rate": 0.606,
+    "total_spectators": 1202637,
+    "avg_spectators": 16939
+  },
+  {
+    "year": 2023,
+    "team": "KT",
+    "win_rate": 0.56,
+    "total_spectators": 697350,
+    "avg_spectators": 9553
+  },
+  {
+    "year": 2023,
+    "team": "SSG",
+    "win_rate": 0.539,
+    "total_spectators": 1068211,
+    "avg_spectators": 14633
+  },
+  {
+    "year": 2023,
+    "team": "NC",
+    "win_rate": 0.528,
+    "total_spectators": 557607,
+    "avg_spectators": 7854
+  },
+  {
+    "year": 2023,
+    "team": "두산",
+    "win_rate": 0.521,
+    "total_spectators": 969562,
+    "avg_spectators": 13282
+  },
+  {
+    "year": 2023,
+    "team": "KIA",
+    "win_rate": 0.514,
+    "total_spectators": 717025,
+    "avg_spectators": 10099
+  },
+  {
+    "year": 2023,
+    "team": "롯데",
+    "win_rate": 0.472,
+    "total_spectators": 891745,
+    "avg_spectators": 12216
+  },
+  {
+    "year": 2023,
+    "team": "삼성",
+    "win_rate": 0.427,
+    "total_spectators": 845775,
+    "avg_spectators": 11912
+  },
+  {
+    "year": 2023,
+    "team": "한화",
+    "win_rate": 0.42,
+    "total_spectators": 566785,
+    "avg_spectators": 7764
+  },
+  {
+    "year": 2023,
+    "team": "키움",
+    "win_rate": 0.411,
+    "total_spectators": 583629,
+    "avg_spectators": 8220
+  },
+  {
+    "year": 2024,
+    "team": "KIA",
+    "win_rate": 0.613,
+    "total_spectators": 1259249,
+    "avg_spectators": 17250
+  },
+  {
+    "year": 2024,
+    "team": "삼성",
+    "win_rate": 0.549,
+    "total_spectators": 1347022,
+    "avg_spectators": 18452
+  },
+  {
+    "year": 2024,
+    "team": "LG",
+    "win_rate": 0.535,
+    "total_spectators": 1397499,
+    "avg_spectators": 19144
+  },
+  {
+    "year": 2024,
+    "team": "두산",
+    "win_rate": 0.521,
+    "total_spectators": 1301768,
+    "avg_spectators": 18335
+  },
+  {
+    "year": 2024,
+    "team": "KT",
+    "win_rate": 0.507,
+    "total_spectators": 843942,
+    "avg_spectators": 11887
+  },
+  {
+    "year": 2024,
+    "team": "SSG",
+    "win_rate": 0.507,
+    "total_spectators": 1143773,
+    "avg_spectators": 16109
+  },
+  {
+    "year": 2024,
+    "team": "롯데",
+    "win_rate": 0.471,
+    "total_spectators": 1232840,
+    "avg_spectators": 17364
+  },
+  {
+    "year": 2024,
+    "team": "한화",
+    "win_rate": 0.465,
+    "total_spectators": 804204,
+    "avg_spectators": 11327
+  },
+  {
+    "year": 2024,
+    "team": "NC",
+    "win_rate": 0.43,
+    "total_spectators": 749058,
+    "avg_spectators": 10261
+  },
+  {
+    "year": 2024,
+    "team": "키움",
+    "win_rate": 0.403,
+    "total_spectators": 808350,
+    "avg_spectators": 11073
+  }
+]

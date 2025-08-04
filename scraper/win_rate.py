@@ -8,7 +8,7 @@ import json
 import time
 import os
 
-# 브라우저 꺼짐 방지 옵션 (headless 모드)
+# 브라우저 꺼짐 방지 옵션 (headless 모드)quit
 options = Options()
 options.add_argument("--headless")
 options.add_argument("--no-sandbox")
@@ -69,13 +69,13 @@ def main():
     print("KBO 최근 5년 구단별 승률 데이터 스크래핑 시작...")
     
     for year in years:
-        print(f"  ▶ {year}년 데이터 수집 중...")
+        print(f"  {year}년 데이터 수집 중...")
         year_data = scrape_kbo_team_winrates(year)
         if year_data:
             all_data[str(year)] = year_data
-            print(f"    ✔ {len(year_data)}개 팀 데이터 수집 완료")
+            print(f"   {len(year_data)}개 팀 데이터 수집 완료")
         else:
-            print(f"    ✗ {year}년 데이터 수집 실패")
+            print(f"   {year}년 데이터 수집 실패")
         time.sleep(1)  # 서버 부하 방지
     
     # 현재 작업 디렉토리 확인
@@ -101,7 +101,7 @@ def main():
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(all_data, f, ensure_ascii=False, indent=4)
         
-        print(f"\n✅ JSON 파일 저장 완료: {output_file}")
+        print(f"\n JSON 파일 저장 완료: {output_file}")
         print(f"파일 절대 경로: {os.path.abspath(output_file)}")
         print(f"총 {sum(len(data) for data in all_data.values())}개의 팀 레코드가 저장되었습니다.")
         
@@ -110,10 +110,10 @@ def main():
             file_size = os.path.getsize(output_file)
             print(f"파일 크기: {file_size} bytes")
         else:
-            print("❌ 파일 생성 실패!")
+            print("파일 생성 실패!")
             
     except Exception as e:
-        print(f"❌ 파일 저장 오류: {e}")
+        print(f" 파일 저장 오류: {e}")
     
     # 연도별 승률 요약 출력
     print("\n=== 최근 5년 KBO 구단별 승률 요약 ===")
