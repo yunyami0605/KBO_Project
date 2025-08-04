@@ -12,7 +12,7 @@ First Mini Project of Python Data Analysis
 ---
 
 ### 3. 폴더 구조
-'''
+```
 .
 ├── README.md
 ├── app
@@ -26,7 +26,7 @@ First Mini Project of Python Data Analysis
 ├── requirements.txt
 ├── scraper : 크롤링 로직
 └── libs : util 함수
-'''
+
 ### 4. 네이밍 규칙
 
 1안
