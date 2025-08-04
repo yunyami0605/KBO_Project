@@ -12,9 +12,13 @@ st.set_page_config(
 
 st.title("⚾ KBO 데이터 분석 대시보드")
 
-tabs = st.tabs(["📊 승률-관중수 상관관계", "🏟️ 구장 정보", "🧠 야구 직관 팬 성향 분석"])
+tabs = st.tabs(["📊 승률-관중수 상관관계", "🧠 야구 직관 팬 성향 분석", "🏟️ 구장 정보"])
 
 with tabs[0]:
+    render_correlation_section()
+    
+
+with tabs[1]:
     # 세션 상태 초기화
     if "inspection_page_idx" not in st.session_state:
         st.session_state.inspection_page_idx = 0
@@ -24,9 +28,7 @@ with tabs[0]:
         st.session_state.inspection_start = False
 
     render_inspection_page()
-
-with tabs[1]:
-    render_correlation_section()
+    
 
 with tabs[2]:
     render_schedule_view()
@@ -34,3 +36,4 @@ with tabs[2]:
     st.subheader("🏟️ 구장 정보")
     st.info("구장 면적 분석 및 기타 정보가 여기에 표시됩니다.")
     st.line_chart([100, 200, 300])
+    
