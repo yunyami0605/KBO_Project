@@ -5,3 +5,4 @@ pandas
 pydeck
 plotly
 matplotlib
+seaborn
