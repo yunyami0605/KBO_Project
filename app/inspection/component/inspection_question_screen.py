@@ -3,7 +3,8 @@ import streamlit as st
 
 from apis.weather_api import WeatherAPI
 from features.inspection.inspection_result import InspectionResult # type: ignore
-from app.inspection.constant import questions
+from app.inspection.constant.common import questions
+
 # 야구팬 성향 수치
 result = {
     "comfortable": 0, # 편안파 (쾌적함 & 먹거리 중시형)
