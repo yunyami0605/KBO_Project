@@ -67,7 +67,7 @@ class InspectionResult:
         "defense": 0,
         "runner": 0,
         "hitter": 0,
-        "picher": 0,
+        "pitcher": 0,
     '''
 
     def __init__(self, weather_api: WeatherAPI):
@@ -104,7 +104,7 @@ class InspectionResult:
         유저가 선택한 선수 스탯 종류 반환
         '''
         
-        for stat in ["defense", "runner", "hitter", "picher"]:
+        for stat in ["defense", "runner", "hitter", "pitcher"]:
             if stat in arr:
                 return stat
             
