@@ -6,7 +6,7 @@ import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
 from scipy.stats import pearsonr, spearmanr
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Any
 import os
 
 from libs.json import load_from_json
@@ -58,7 +58,18 @@ class CorrelationAnalyzer:
         
         return filtered_df
     
-    def calculate_correlation(self, df: pd.DataFrame) -> Dict:
+    def calculate_correlation(self, df: pd.DataFrame) -> Dict[str, Any]:
+        if df.empty or len(df) < 2:
+         return {
+            'pearson_correlation': None,
+            'pearson_p_value': None,
+            'pearson_interpretation': "데이터 부족",
+            'spearman_correlation': None,
+            'spearman_p_value': None,
+            'spearman_interpretation': "데이터 부족",
+            'sample_size': len(df),
+            'years_analyzed': sorted(df['year'].unique().tolist())
+        }
         """
         상관관계 계산
         
