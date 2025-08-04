@@ -2,15 +2,14 @@ def render_schedule_view():
     import streamlit as st
     import pandas as pd
     import os
-    import glob
     from datetime import datetime
-    from scraper.경기일정 import fetch_kbo_schedule
 
     st.subheader("📅 오늘의 KBO 경기 일정")
 
-    today = datetime.today().strftime("%Y-%m-%d")
-    data_dir = "./data"
-    json_path = os.path.join(data_dir, f"kbo_schedule_{today}.json")
+    today = datetime.today().strftime("%Y-%m-%d")  # 예: '2025-08-04'
+    today_short = datetime.today().strftime("%y-%m-%d")  # 예: '25-08-04'
+    data_dir = "./data/inspection"
+    json_path = os.path.join(data_dir, f"kbo_schedule.json")
 
     def load_schedule(path):
         try:
@@ -19,41 +18,29 @@ def render_schedule_view():
         except:
             return None
 
-    df = load_schedule(json_path) if os.path.exists(json_path) else None
+    if not os.path.exists(json_path):
+        st.error(f"{json_path} 파일이 존재하지 않습니다. 데이터를 미리 저장해 주세요.")
+        return
 
+    df = load_schedule(json_path)
     if df is None:
-        json_files = sorted(
-            glob.glob(os.path.join(data_dir, "kbo_schedule_*.json")),
-            key=lambda x: os.path.basename(x).split("_")[-1].replace(".json", ""),
-            reverse=True
-        )
-        for file in json_files:
-            df = load_schedule(file)
-            if df is not None:
-                st.info(f"오늘 경기가 없어 가장 최신 일정({os.path.basename(file)})을 보여드립니다.")
-                break
+        st.error(f"{json_path} 파일이 비어 있거나 로드에 실패했습니다.")
+        return
 
-    if df is None:
-        with st.spinner("경기 일정이 없어 데이터를 새로 불러오는 중입니다..."):
-            df, _ = fetch_kbo_schedule(today, save_dir=data_dir)
-        if df.empty:
-            st.warning("오늘도, 최근에도 예정된 경기가 없습니다.")
-            return
-
-    # ✅ 오늘 날짜 기준으로 필터링
-    today_str = datetime.today().strftime("%y-%m-%d")  # ex: '25-08-04'
-    today_df = df[df["날짜"] == today_str]
+    # ✅ 오늘 날짜 기준 필터링
+    today_df = df[df["날짜"] == today_short]
 
     if today_df.empty:
-        st.warning("오늘 예정된 경기가 없습니다. 전체 일정 중 가장 가까운 날짜의 경기를 표시합니다.")
-         # 🔥 오늘 이후 날짜만 필터링
-        future_df = df[df["날짜"] > today_str]
+        st.warning("오늘 예정된 경기가 없습니다. 해당 파일 내에서 가장 가까운 미래 경기 일정을 표시합니다.")
+
+        # 저장된 JSON 안에서 오늘 이후 경기를 찾음
+        future_df = df[df["날짜"] > today_short]
 
         if future_df.empty:
-            st.error("앞으로 예정된 경기도 없습니다.")
+            st.error("파일 내에도 예정된 경기가 없습니다.")
             return
 
-        # 오름차순 정렬 후 가장 가까운 미래 날짜 선택
+        # 가장 가까운 경기일 선택
         next_date = future_df.sort_values("날짜")["날짜"].iloc[0]
         today_df = df[df["날짜"] == next_date]
         st.info(f"가장 가까운 경기 일정: {next_date}")

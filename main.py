@@ -12,13 +12,16 @@ st.set_page_config(
 
 st.title("⚾ KBO 데이터 분석 대시보드")
 
-tabs = st.tabs(["📊 승률-관중수 상관관계", "🧠 야구 직관 팬 성향 분석", "📅 야구 경기 일정"])
+tabs = st.tabs(["📊 승률-관중수 상관관계", "📅 야구 경기 일정", "🧠 야구 직관 팬 성향 분석"])
 
 with tabs[0]:
     render_correlation_section()
-    
 
 with tabs[1]:
+    render_schedule_view()
+    
+with tabs[2]:
+
     # 세션 상태 초기화
     if "inspection_page_idx" not in st.session_state:
         st.session_state.inspection_page_idx = 0
@@ -28,9 +31,5 @@ with tabs[1]:
         st.session_state.inspection_start = False
 
     render_inspection_page()
-    
-
-with tabs[2]:
-    render_schedule_view()
 
     
