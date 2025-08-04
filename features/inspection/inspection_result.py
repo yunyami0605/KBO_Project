@@ -6,7 +6,8 @@ from pprint import pprint
 
 from models.inspection.famous_restaurant import process_recommend_famous_restaurant
 from models.inspection.team_stats_rank import get_team_stats_rank
-
+import pandas as pd
+from datetime import datetime
 
 personality_results = {
     "comfortable": {
@@ -79,6 +80,35 @@ class InspectionResult:
             "better": 0
         }
 
+    # 가까운 시일내에 게임 찾기
+    def find_closest_games(self, arr):
+        if not arr:
+            return []
+
+        # DataFrame 생성
+        df = pd.DataFrame(arr)
+
+        # 날짜 컬럼을 datetime으로 변환 (2025년으로 가정)
+        df['날짜_dt'] = pd.to_datetime('20' + df['날짜'], format='%Y-%m-%d')
+
+        # 오늘 날짜
+        today = pd.to_datetime(datetime.now().strftime('%Y-%m-%d'))
+
+        # 오늘 이후만 필터링
+        df_future = df[df['날짜_dt'] >= today]
+
+        if df_future.empty:
+            return []
+
+        # 가장 가까운 날짜 추출
+        closest_date = df_future['날짜_dt'].min()
+
+        # 해당 날짜의 경기들만 추출
+        df_result = df_future[df_future['날짜_dt'] == closest_date]
+
+        # 딕셔너리 리스트로 변환해서 반환
+        return df_result.drop(columns='날짜_dt').to_dict(orient='records')
+
     # 결과치에 따른 유저 성향 설정
     def set_personality(self, arr):
         for value in arr:
@@ -120,7 +150,9 @@ class InspectionResult:
         stadium_data = load_from_json("data/kbo_baseball_stadiums_info.json")["teams"]
         schedule_data = load_from_json("data/inspection/kbo_schedule.json")
 
-        home_teams = [item["홈팀"] for item in schedule_data]
+        today_schedule_data = self.find_closest_games(schedule_data)
+
+        home_teams = [item["홈팀"] for item in today_schedule_data]
 
         pprint(stadium_data)
         pprint(home_teams)
@@ -134,6 +166,28 @@ class InspectionResult:
             }
             for item in stadium_data if item["team"] in home_teams
         }
+    
+    def get_recommend_seats(self, arr):
+        '''
+        좌석 추천 반환
+
+        Params:
+            arr: str[]
+        '''
+        selected_seat_tag = "outside"
+        for tag in ["outside", "top", "front", "entrance"]:
+            if tag in arr:
+                selected_seat_tag =  tag
+            
+        recommend_seat = {
+            "outside": "외야석 / 잔디석",
+            "top": "상단 내야석 / 스카이석",
+            "front": "응원석 / 외야 정면석",
+            "entrance": "입구 근처 내야석 / 1루·3루 중단부 좌석",
+        }
+            
+        return recommend_seat[selected_seat_tag]
+
     
     def get_recommend_weather_stadiums(self, selected_weather):
         '''
@@ -209,6 +263,9 @@ class InspectionResult:
             if selected_team:
                 break
 
+        # 좌석 추천
+        recommend_seat_data = self.get_recommend_seats(result_arr)
+
         pprint("@@@ selected_team_SELECTED ")
         pprint(selected_team)
 
@@ -230,7 +287,8 @@ class InspectionResult:
             
         return {
             "team" : selected_team,
-            "famous_restaurants": famous_rests[selected_team["name"]]
+            "famous_restaurants": famous_rests[selected_team["name"]],
+            "recommend_seat": recommend_seat_data
         }
 
     def get_personality_result(self, result_arr):
