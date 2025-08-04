@@ -62,7 +62,9 @@ def fetch_kbo_schedule(target_date: str, save_dir="data"):
     print(data)
     print(len(data))
 
+    return pd.DataFrame(data), data
 
 if __name__ == "__main__":
     today = datetime.today().strftime("%Y-%m-%d")
     fetch_kbo_schedule(today)
+
