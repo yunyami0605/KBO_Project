@@ -12,7 +12,7 @@ First Mini Project of Python Data Analysis
 ---
 
 ### 3. 폴더 구조
-
+'''
 .
 ├── README.md
 ├── app
