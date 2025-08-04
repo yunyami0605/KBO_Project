@@ -167,6 +167,28 @@ class InspectionResult:
             for item in stadium_data if item["team"] in home_teams
         }
     
+    def get_recommend_seats(self, arr):
+        '''
+        좌석 추천 반환
+
+        Params:
+            arr: str[]
+        '''
+        selected_seat_tag = "outside"
+        for tag in ["outside", "top", "front", "entrance"]:
+            if tag in arr:
+                selected_seat_tag =  tag
+            
+        recommend_seat = {
+            "outside": "외야석 / 잔디석",
+            "top": "상단 내야석 / 스카이석",
+            "front": "응원석 / 외야 정면석",
+            "entrance": "입구 근처 내야석 / 1루·3루 중단부 좌석",
+        }
+            
+        return recommend_seat[selected_seat_tag]
+
+    
     def get_recommend_weather_stadiums(self, selected_weather):
         '''
         조건 만족한 홈 경기장 리스트 반환 (없을 경우, 전체다 반환)
@@ -241,6 +263,9 @@ class InspectionResult:
             if selected_team:
                 break
 
+        # 좌석 추천
+        recommend_seat_data = self.get_recommend_seats(result_arr)
+
         pprint("@@@ selected_team_SELECTED ")
         pprint(selected_team)
 
@@ -262,7 +287,8 @@ class InspectionResult:
             
         return {
             "team" : selected_team,
-            "famous_restaurants": famous_rests[selected_team["name"]]
+            "famous_restaurants": famous_rests[selected_team["name"]],
+            "recommend_seat": recommend_seat_data
         }
 
     def get_personality_result(self, result_arr):

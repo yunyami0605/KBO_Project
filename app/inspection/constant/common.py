@@ -59,22 +59,22 @@ questions = [
         "options": [
             {
                 "text": "친구들이랑 편하게 앉아서 먹고 마실 수 있는 공간이 좋다.",
-                "value": [ "outside" ]
+                "value": [ "outside" ] #외야석 / 잔디석
             },
 
             {
                 "text": "경기장 전체가 한눈에 잘 보이는 자리가 편하다.",
-                "value": [ "top" ]
+                "value": [ "top" ] #상단 내야석 / 스카이석
             },
 
             {
                 "text": "팬들과 함께 신나게 응원할 수 있는 곳이 좋다.",
-                "value": [ "front" ]
+                "value": [ "front" ] #응원석 / 외야 정면석
             },
 
             {
                 "text": "빠르게 들어가고 나올 수 있어서 편리한 곳이면 좋다.",
-                "value": [ "entrance" ]
+                "value": [ "entrance" ] #입구 근처 내야석 / 1루·3루 중단부 좌석
             },
         ]
     },
