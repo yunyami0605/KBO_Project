@@ -38,7 +38,9 @@ def process_recommend_famous_restaurant():
                 "place_name": restraunt["place_name"],
                 "category_name": restraunt["category_name"],
                 "address_name": restraunt["address_name"],
-                "url": restraunt["place_url"]
+                "url": restraunt["place_url"],
+                "longitude": restraunt["x"],
+                "latitude": restraunt["y"]
             }
             for restraunt in restraunts
         ]

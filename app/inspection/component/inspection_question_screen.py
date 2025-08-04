@@ -1,5 +1,8 @@
 
+from pprint import pprint
+import pandas as pd
 import streamlit as st
+import pydeck as pdk
 
 from apis.weather_api import WeatherAPI
 from features.inspection.inspection_result import InspectionResult # type: ignore
@@ -53,25 +56,101 @@ def questions_screen():
             st.subheader("당신의 팬 유형")
 
             keyword_html = "".join([f"<div class='keyword item_box'># {kw}</div>" for kw in pan_type["keyword"]])
-            content_html = "".join([f"<div class='content item_box'>{co}</div>" for co in pan_type["content"]])
+            content_html = "".join([f"<div class='content item_box'>{idx + 1}. {co}</div>" for idx, co in enumerate(pan_type["content"])])
             rest_html = "".join([
                 f"<a href='{rest["url"]}' target='_blank'><div class='content'>{rest["place_name"]}</div></a>"
                 for rest in recommend["famous_restaurants"]
             ])
 
-            html = f"""
+            print("@ recomment")
+            pprint(recommend["famous_restaurants"])
+            reommend_team_info = recommend["team"]
+            recomment_team_stadium = reommend_team_info["stadium"]
+            recomment_team_latitude = reommend_team_info["latitude"]
+            recomment_team_longitude = reommend_team_info["longitude"]
+
+            html_inspection_personality = f"""
             <div class='result-card'>
                 <div class='title'>{pan_type['name']}</div>
                 <div class='keyword-box'>{keyword_html}</div>
                 <div class='title'>당신의 팬 성향!</div>
                 <div class='content-box'>{content_html}</div>
+            </div>
+            """
+
+            # 유저 팬 성향 출력
+            st.markdown(html_inspection_personality, unsafe_allow_html=True)
+
+            # 1. 구장 정보
+            map_items = [{
+                "name": recomment_team_stadium,
+                "lat": float(recomment_team_latitude),
+                "lon": float(recomment_team_longitude),
+                "type": "stadium"
+            }]
+
+            # 2. 맛집 정보 추가
+            for rest in recommend["famous_restaurants"]:
+                map_items.append({
+                    "name": rest["place_name"],
+                    "lat": float(rest["latitude"]),
+                    "lon": float(rest["longitude"]),
+                    "type": "restaurant"
+                })
+
+            # 3. DataFrame으로 변환
+            map_df = pd.DataFrame(map_items)
+
+            # 좌표 + 이름
+            # recommend_df = pd.DataFrame([{
+            #     "name": recomment_team_stadium,
+            #     "lat": recomment_team_latitude,
+            #     "lon": recomment_team_longitude
+            # }])
+
+            layer = pdk.Layer(
+                "ScatterplotLayer",
+                data=map_df,
+                get_position='[lon, lat]',
+                get_radius="""
+                    type === 'stadium' ? 100 : 75
+                """,
+                get_fill_color="""
+                    [
+                        type === 'stadium' ? 255 : 0,
+                        type === 'restaurant' ? 128 : 0,
+                        0,
+                        255
+                    ]
+                """,
+                pickable=True,
+            )
+
+            tooltip = {"text": "{name}"}
+
+            view_state = pdk.ViewState(
+                latitude=float(recomment_team_latitude),
+                longitude=float(recomment_team_longitude),
+                zoom=13,
+                pitch=0,
+            )
+
+            st.pydeck_chart(pdk.Deck(
+                map_style="mapbox://styles/mapbox/light-v9",
+                initial_view_state=view_state,
+                layers=[layer],
+                tooltip=tooltip
+            ))
+
+            html_inspection_recommend = f"""
+            <div class='result-card'>
                 <div class='recommend_container item_box'>
                     <div class='recommend_box'>
-                        <div>구장 추천</div>
-                        <div>{recommend["team"]}</div>
+                        <div class="recommend_box_title">구장 추천</div>
+                        <div>{recomment_team_stadium}</div>
                     </div>
                     <div class='recommend_box'>
-                        <div>인근 맛집 추천</div>
+                        <div class="recommend_box_title">인근 맛집 추천</div>
                         <div class='shop_list'>
                             {rest_html}
                         </div>
@@ -80,8 +159,7 @@ def questions_screen():
             </div>
             """
 
-            # 출력
-            st.markdown(html, unsafe_allow_html=True)
+            st.markdown(html_inspection_recommend, unsafe_allow_html=True)
 
             # 다시 시작 버튼
             if st.button("다시 시작", key="btn-reset"):

@@ -4,15 +4,14 @@ import streamlit as st
 def apply_inspection_styles():
     st.markdown("""
         <style>
-                
         /* 기본 버튼 */
         .stButton {
             margin: 6px 0;
         }        
         .stButton > button {
             width: 400px;
-            border: 1xp solid #3f51b5;
-            color: white;
+            border: 1px solid #ccc;
+            color: black;
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 8px;
@@ -22,23 +21,22 @@ def apply_inspection_styles():
         div.st-key-btn-start {
             padding: 24px 0;        
         }
+                
         div.st-key-btn-start button, div.st-key-btn-reset button {
             width: 400px;
-            background-color: #3f51b5;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 8px;
+            background-color: transparent;
+            border: 1px solid #6732D5;
+            color: #6732D5;
         }
                 
-        div.st-key-btn-start button:hover,
-        div.st-key-btn-start button:focus:not(:active),
-        div.st-key-btn-reset button:hover,
-        div.st-key-btn-reset button:focus:not(:active){
-            border: 1px solid #1565c0;
-            background-color: #1565c0;
-            color: white;
+        .stButton > button:hover,
+        .stButton > button:focus:not(:active),
+        .stButton > button:hover,
+        .stButton > button:focus:not(:active){
+            border: 2px solid #6732D5;
+            background: transparent;
+            color: #6732D5;
+            transform: scale(1.02);
         }
 
         /* 제목 섹션 */
@@ -78,8 +76,8 @@ def apply_inspection_styles():
 
         /* 결과 카드 */
         .result-card {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
+            background-color: transparent;
+            border: 1px solid #aaa;
             border-radius: 12px;
             padding: 24px;
             margin: 24px 0;
@@ -88,7 +86,7 @@ def apply_inspection_styles():
                 
         div.item_box{
             border: 1px solid #555;
-            background: #131720;
+            background: transparent;
             border-radius: 6px;
         }
 
@@ -102,6 +100,7 @@ def apply_inspection_styles():
                 
         div.keyword-box div.keyword{
             padding: 8px 14px;
+            background: transparent;
         }
                 
         /* 성향 내용 구간 */
@@ -135,26 +134,34 @@ def apply_inspection_styles():
             align-items: center;
         }
                 
+        div.recommend_box_title{
+            font-size: 20px;
+            font-weight: bold;
+            color: #222;
+        }
+                
         div.shop_list{
             display: flex;
-            flex-direction: column;
             gap: 12px;
         }
                 
         div.shop_list a{
             display: inline-block;
-            color: #ffffff;
+            color: black;
             padding: 14px 20px;
             margin: 6px 0;
             border-radius: 6px;
-            border: 1px solid #444;
+            border: 1px solid #6732D5;
+            color: #6732D5;
             text-decoration: none;
             transition: background-color 0.2s, border-color 0.2s;    
         }
                 
         div.shop_list a:hover {
-            border-color: #777;
-            color: #fff;
+            border: 2px solid #6732D5;
+            transform: scale(1.02);
+            cursor: pointer;
+            color: black;
         }
                 
 

@@ -2,3 +2,9 @@ streamlit
 requests
 python-dotenv
 pandas
+pydeck
+plotly
+matplotlib
+seaborn
+scipy
+scikit-learn
