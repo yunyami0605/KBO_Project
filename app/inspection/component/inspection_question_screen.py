@@ -146,8 +146,9 @@ def questions_screen():
             <div class='result-card'>
                 <div class='recommend_container item_box'>
                     <div class='recommend_box'>
-                        <div class="recommend_box_title">구장 추천</div>
+                        <div class="recommend_box_title">구장 및 좌석 추천</div>
                         <div>{recomment_team_stadium}</div>
+                        <div>{recommend["recommend_seat"]}</div>
                     </div>
                     <div class='recommend_box'>
                         <div class="recommend_box_title">인근 맛집 추천</div>
