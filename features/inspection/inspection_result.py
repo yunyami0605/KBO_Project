@@ -118,7 +118,7 @@ class InspectionResult:
         pprint("### get_today_home_team_data start ###")
 
         stadium_data = load_from_json("data/kbo_baseball_stadiums_info.json")["teams"]
-        schedule_data = load_from_json("data/kbo_schedule.json")
+        schedule_data = load_from_json("data/inspection/kbo_schedule.json")
 
         home_teams = [item["홈팀"] for item in schedule_data]
 
