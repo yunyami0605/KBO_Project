@@ -52,7 +52,7 @@ def render_schedule_view():
         st.markdown(f"### 📌 {date}")
         for _, row in group.iterrows():
             st.markdown(f"""
-            <div style="border:1px solid #ddd; border-radius:10px; padding:10px; margin:8px 0; background-color:#f9f9f9">
+            <div style="border:1px solid #ddd; border-radius:10px; padding:10px; margin:8px 0;">
                 <b>⏰ {row['시간']}</b><br>
                 <span style="font-size: 18px;">
                     🎒 <b>{row['원정팀']}</b> (원정) vs 🏟 <b>{row['홈팀']}</b> (홈)
