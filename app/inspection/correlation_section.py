@@ -42,19 +42,25 @@ def render_correlation_section():
     if selected_team != "전체 구단":
         filtered_df = filtered_df[filtered_df['team'] == selected_team]
 
-    # 4) 상관관계 통계 계산
+    # 4) 상관관계 계산
     stats = analyzer.calculate_correlation(filtered_df)
 
     # 5) 상단 메트릭 표시
     m1, m2, m3 = st.columns(3)
+    # 피어슨 상관계수 표시
     pearson_val = stats.get('pearson_correlation')
     if pearson_val is not None:
-        m1.metric("피어슨 상관계수", f"{pearson_val:.4f}")
+        pearson_str = f"{pearson_val:.4f}"
     else:
-        m1.metric("피어슨 상관계수", "–")
+        pearson_str = "계산 불가"
+    m1.metric("피어슨 상관계수", pearson_str)
 
-    m2.metric("상관관계 강도", stats.get('pearson_interpretation', "-"))
-    m3.metric("분석 샘플 수", f"{stats.get('sample_size', 0)}개")
+    # 상관관계 강도
+    m2.metric("상관관계 강도", stats.get('pearson_interpretation', "–"))
+
+    # 샘플 수 표시
+    sample_size = stats.get('sample_size', 0)
+    m3.metric("분석 샘플 수", f"{sample_size}개")
 
     # 6) 통계 유의성 표시
     p_value = stats.get('pearson_p_value')
@@ -72,11 +78,12 @@ def render_correlation_section():
     if years_list:
         st.markdown(f"**분석 기간:** {min(years_list)} - {max(years_list)}")
         st.markdown(f"**포함된 연도:** {', '.join(map(str, years_list))}")
+    # 스피어만 상관계수 표시
     spearman_val = stats.get('spearman_correlation')
     if spearman_val is not None:
         spearman_str = f"{spearman_val:.4f}"
     else:
-        spearman_str = "–"
+        spearman_str = "계산 불가"
     st.markdown(f"**스피어만 상관계수:** {spearman_str}")
 
     # 8) 산점도 시각화
@@ -84,7 +91,7 @@ def render_correlation_section():
     scatter_fig = analyzer.create_scatter_plot(filtered_df, selected_years)
     st.plotly_chart(scatter_fig, use_container_width=True)
 
-    # 9) 연도별 트렌드 그래프 (기간 >1, 최소 2개 데이터)
+    # 9) 연도별 트렌드 그래프 (기간 >1, 데이터 ≥2)
     if selected_years > 1:
         if stats.get('sample_size', 0) >= 2:
             st.markdown("### 📊 연도별 승률 & 관중수 트렌드")
@@ -134,37 +141,55 @@ def render_correlation_section():
         }).background_gradient(subset=['평균_승률'], cmap='RdYlGn')
         st.dataframe(styled, use_container_width=True)
 
-    # 11) 분석 인사이트
-    st.markdown("### 🔍 분석 인사이트")
-    corr_val = stats.get('pearson_correlation')
-    if corr_val is not None and abs(corr_val) >= 0.3:
-        if corr_val > 0:
-            st.success("양의 상관관계: 승률이 높을수록 관중수도 증가하는 경향이 있습니다.")
+    # 11) 분석 결과 해설
+    with st.expander("🔍 분석 결과 해설 및 설명"):
+        corr_val = stats.get('pearson_correlation')
+        if corr_val is not None:
+            interpretation = ""
+            if abs(corr_val) >= 0.7:
+                interpretation += "강한 상관관계: 승률과 관중수 사이에 매우 강한 연관성을 보입니다.\n"
+            elif abs(corr_val) >= 0.3:
+                interpretation += "중간 상관관계: 승률과 관중수 사이에 중간 정도의 연관성을 보입니다.\n"
+            elif abs(corr_val) >= 0.1:
+                interpretation += "약한 상관관계: 승률과 관중수 사이에 약한 연관성을 보입니다.\n"
+            else:
+                interpretation += "상관관계 없음: 승률과 관중수 사이에 뚜렷한 관계가 없습니다.\n"
+
+            if corr_val > 0:
+                interpretation += "양의 관계: 승률이 높을수록 관중수가 증가하는 경향을 보입니다.\n"
+            else:
+                interpretation += "음의 관계: 승률이 높을수록 관중수가 감소하는 경향을 보입니다.\n"
+            
+            p = stats.get('pearson_p_value')
+            if p is not None:
+                if p < 0.05:
+                    interpretation += "통계적으로 유의함 (p < 0.05).\n"
+                else:
+                    interpretation += "통계적으로 유의하지 않음 (p ≥ 0.05).\n"
         else:
-            st.warning("음의 상관관계: 승률이 높을수록 관중수가 감소하는 경향이 있습니다.")
-    elif corr_val is not None:
-        st.info("약한 상관관계: 승률과 관중수 사이에 뚜렷한 선형 관계가 없습니다.")
-    else:
-        st.info("분석 인사이트를 위해서는 최소 2개 이상의 데이터가 필요합니다.")
+            interpretation = "데이터가 부족하여 상관관계를 계산할 수 없습니다."
 
-    # 12) 추가 분석 제안
-    with st.expander("💡 추가 분석 제안"):
-        st.markdown("""
-        **더 깊이 있는 분석을 위한 제안:**
-        
-        1. **구장별 분석**: 각 구장의 특성(면적, 위치)이 관중수에 미치는 영향  
-        2. **시계열 분석**: 코로나19 등 외부 요인이 관중수에 미친 영향  
-        3. **팀별 세분화**: 인기팀 vs 비인기팀의 승률-관중수 관계 차이  
-        4. **월별/요일별 분석**: 시기별 관중수 패턴 분석  
-        5. **경기 결과별**: 홈/원정 경기별 관중수 차이 분석  
-        """)
+        st.markdown(interpretation)
 
-    # 13) 데이터 다운로드
-    if st.button("📥 분석 데이터 다운로드"):
-        csv = filtered_df.to_csv(index=False, encoding='utf-8-sig')
-        st.download_button(
-            label="CSV 파일 다운로드",
-            data=csv,
-            file_name=f"kbo_corr_{selected_team}_{selected_years}years.csv",
-            mime="text/csv"
-        )
+    # 12) 데이터 및 해설 다운로드
+    if st.button("📥 분석 데이터 및 해설 다운로드"):
+        # CSV 데이터
+        csv_data = filtered_df.to_csv(index=False, encoding='utf-8-sig')
+        # 해설 텍스트
+        text_data = interpretation
+
+        col_csv, col_txt = st.columns(2)
+        with col_csv:
+            st.download_button(
+                label="CSV 파일 다운로드",
+                data=csv_data,
+                file_name=f"kbo_corr_{selected_team}_{selected_years}y.csv",
+                mime="text/csv"
+            )
+        with col_txt:
+            st.download_button(
+                label="해설 텍스트 다운로드",
+                data=text_data,
+                file_name=f"kbo_corr_{selected_team}_{selected_years}y.txt",
+                mime="text/plain"
+            )
