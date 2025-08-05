@@ -11,7 +11,6 @@ def apply_inspection_styles():
         .stButton > button {
             width: 400px;
             border: 1px solid #ccc;
-            color: black;
             padding: 10px 20px;
             font-size: 16px;
             border-radius: 8px;
@@ -137,7 +136,6 @@ def apply_inspection_styles():
         div.recommend_box_title{
             font-size: 20px;
             font-weight: bold;
-            color: #222;
         }
                 
         div.shop_list{
