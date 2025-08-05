@@ -6,6 +6,6 @@ pydeck
 plotly
 matplotlib
 seaborn
-scipy
 scikit-learn
-statsmodels
+statsmodels==0.14.0
+scipy>=1.5
